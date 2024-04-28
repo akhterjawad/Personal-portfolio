@@ -29,236 +29,244 @@
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
+	
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target"
+			id="ftco-navbar">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">Portfolio</a>
+				<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+					data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="oi z-index oi-menu"></span> <span class="visibility">..</span></button>
 
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-		<div class="container">
-			<a class="navbar-brand" href="index.html">Portfolio</a>
-			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> <span class="visibility">..</span></button>
-
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav nav ml-auto">
-					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-					<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-					<li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-				</ul>
+				<div class="collapse navbar-collapse" id="ftco-nav">
+					<ul class="navbar-nav nav ml-auto">
+						<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+						<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+						<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+						<li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+						<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+					</ul>
+				</div>
 			</div>
-		</div>
-	</nav>
-	<section id="home-section" class="hero">
-		<div class="home-slider  owl-carousel">
-			<div class="slider-item ">
-				<div class="overlay"></div>
-				<div class="container">
-					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
-						data-scrollax-parent="true">
-						<div class="one-third js-fullheight order-md-last img"
-							style="background-image:url(images/use-case-website-image-01.png);">
-							<div class="overlay"></div>
-						</div>
-						<div class="one-forth d-flex  align-items-center ftco-animate"
-							data-scrollax=" properties: { translateY: '70%' }">
-							<div class="text">
-								<span class="subheading">Hello!</span>
-								<h1 class="mb-4 mt-3">I'm <span>Muhammad Jawad</span></h1>
+		</nav>
+		<section id="home-section" class="hero">
+			<div class="home-slider  owl-carousel">
+				<div class="slider-item ">
+					<div class="overlay"></div>
+					<div class="container">
+						<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
+							data-scrollax-parent="true">
+							<div class="one-third js-fullheight order-md-last img"
+								style="background-image:url(images/use-case-website-image-01.png);">
+								<div class="overlay"></div>
+							</div>
+							<div class="one-forth d-flex  align-items-center ftco-animate"
+								data-scrollax=" properties: { translateY: '70%' }">
+								<div class="text">
+									<span class="subheading">Hello!</span>
+									<h1 class="mb-4 mt-3">I'm <span>Muhammad Jawad</span></h1>
 
-								<!-- Element to contain animated typing -->
-								<span id="typing-animation"></span>
+									<!-- Element to contain animated typing -->
+									<span id="typing-animation"></span>
 
-								<script>
+									<script>
 
-									// Initialize the typing animation
-									const typingAnimationElement = document.getElementById('typing-animation');
+										// Initialize the typing animation
+										const typingAnimationElement = document.getElementById('typing-animation');
 
-									// Create an array of typing text
-									const typingTexts = [
-										'MERN Stack  ',
-										'Developer  ',
-									];
+										// Create an array of typing text
+										const typingTexts = [
+											'MERN Stack  ',
+											'Developer  ',
+										];
 
-									// Create a function to display the typing animation for a given text
-									function playTypingAnimation(text) {
-										// Loop through each character and add it to the element
-										for (let i = 0; i < text.length; i++) {
+										// Create a function to display the typing animation for a given text
+										function playTypingAnimation(text) {
+											// Loop through each character and add it to the element
+											for (let i = 0; i < text.length; i++) {
+												setTimeout(() => {
+													typingAnimationElement.textContent += text[i];
+												}, i * 200); // Increase the delay to slow down the typing animation
+											}
+
+											// Once the animation is complete, reset the text and start over
 											setTimeout(() => {
-												typingAnimationElement.textContent += text[i];
-											}, i * 200); // Increase the delay to slow down the typing animation
+												typingAnimationElement.textContent = '';
+												playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+											}, text.length * 200);
 										}
 
-										// Once the animation is complete, reset the text and start over
-										setTimeout(() => {
-											typingAnimationElement.textContent = '';
-											playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-										}, text.length * 200);
-									}
+										// Start the typing animation loop
+										playTypingAnimation(typingTexts[0]);
 
-									// Start the typing animation loop
-									playTypingAnimation(typingTexts[0]);
+									</script>
 
-								</script>
-
-								<br>
-								<br>
-								<h2>A Future software engineer</h2>
-								<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-								<!-- <br> -->
-								<p><a target="_blank" href="https://app.netlify.com/teams/akhterjawad/overview"
-										class="btn btn-primary py-3 px-4">My works</a>
-									<!-- <a href="https://app.netlify.com/teams/akhterjawad/overview"
+									<br>
+									<br>
+									<h2>A Future software engineer</h2>
+									<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
+									<!-- <br> -->
+									<p><a target="_blank" href="https://app.netlify.com/teams/akhterjawad/overview"
+											class="btn btn-primary py-3 px-4">My works</a>
+										<!-- <a href="https://app.netlify.com/teams/akhterjawad/overview"
 										class="btn btn-white btn-outline-white py-3 px-4">My works</a> -->
-								</p>
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
 
 
-	<section class="margin-left ftco-about img ftco-section ftco-no-pb" id="about-section">
-		<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-					<!-- <div class="row d-flex"> -->
-					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay">
-								<div class="center">
-									<div class="row">
-										<div class="col-sm-6 col-md-5">
+		<section class="margin-left ftco-about img ftco-section ftco-no-pb" id="about-section">
+			<div class="container">
+				<div class="row">
+					<div class="row d-flex align-items-stretch">
+						<!-- <div class="row d-flex"> -->
+						<div class="col-md-6 col-lg-5 d-flex">
+							<div class="img-about img d-flex align-items-stretch">
+								<div class="overlay">
+									<div class="center">
+										<div class="row">
+											<div class="col-sm-6 col-md-5">
 
-											<div class="about-img">
-												<img src="images/bg_1..jpeg" class="bg_1 rounded b-shadow-a" alt="">
+												<div class="about-img">
+													<img src="images/bg_1..jpeg" class="bg_1 rounded b-shadow-a" alt="">
+												</div>
 											</div>
-										</div>
-										<!-- Details next to profile image -->
-										<div class="col-sm-6 col-md-7 information">
-											<div class="about-info">
-												<p><span class="title-s">Name: </span> <span>MUhammad Jawad
-														Akhter</span>
-												</p>
-												<!-- <p><span class="title-s">Job Role: </span> <span>Senior Data Analyst</span>
+											<!-- Details next to profile image -->
+											<div class="col-sm-6 col-md-7 information">
+												<div class="about-info">
+													<p><span class="title-s">Name: </span> <span>MUhammad Jawad
+															Akhter</span>
+													</p>
+													<!-- <p><span class="title-s">Job Role: </span> <span>Senior Data Analyst</span>
 											</p> -->
-												<p><span class="title-s">Experience: </span> <span>1 Years 2
-														Months</span>
-												</p>
-												<p><span class="title-s">Address: </span> <span>Sindh, Pakistan</span>
-												</p>
+													<p><span class="title-s">Experience: </span> <span>1 Years 2
+															Months</span>
+													</p>
+													<p><span class="title-s">Address: </span> <span>Sindh,
+															Pakistan</span>
+													</p>
+												</div>
 											</div>
+
+										</div>
+									</div>
+
+									<div class="skill-mf">
+										<p class="title-s">Skills</p>
+										<span>HTML</span> <span class="pull-right">95%</span>
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" style="width: 95%;"
+												aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
 										</div>
 
-									</div>
-								</div>
+										<span>CSS</span> <span class="pull-right">85%</span>
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" style="width: 85%"
+												aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
 
-								<div class="skill-mf">
-									<p class="title-s">Skills</p>
-									<span>HTML</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%;"
-											aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
+										<span>JavaScript</span> <span class="pull-right">85%</span>
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" style="width: 85%"
+												aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
 
-									<span>CSS</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%"
-											aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
+										<span>React JS</span> <span class="pull-right">75%</span>
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" style="width: 75%"
+												aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
 
-									<span>JavaScript</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%"
-											aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-
-									<span>React JS</span> <span class="pull-right">75%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 75%"
-											aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-
-									<span>Tailwind CSS</span> <span class="pull-right">80%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%"
-											aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+										<span>Tailwind CSS</span> <span class="pull-right">80%</span>
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" style="width: 80%"
+												aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
+						<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+							<div class="row justify-content-start pb-3">
+								<div class="col-md-12 heading-section ftco-animate">
 
-								<h1 class="big">About</h1>
-								<h2 class="mb-4">About Me</h2>
+									<h1 class="big">About</h1>
+									<h2 class="mb-4">About Me</h2>
 
-								<p>In GIAIC Batch 01, I'm delving into Web 3.0 and the Metaverse. Learning decentralized
-									protocols, blockchain tech, and immersive virtual environments. Excited to build
-									dApps, understand smart contracts, and shape the digital future. <br />& as you know
-									I am MERN Stack Developer. A MERN (MongoDB, Express, React, Node.js) stack developer
-									is a skilled programmer who crafts robust, scalable, and dynamic web applications,
-									leveraging the power of JavaScript and flexible database management.<br />
-									Demonstrated success in leading impactful projects and providing effective
-									mentorship.</p>
-								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Profile:</span> <span>MERN Stack Developer</span>
-									</li>
-									<!-- <li class="d-flex"><span>Domain:</span> <span>Retail, Ecommerce, BFSI &amp; Digital
+									<p>In GIAIC Batch 01, I'm delving into Web 3.0 and the Metaverse. Learning
+										decentralized
+										protocols, blockchain tech, and immersive virtual environments. Excited to build
+										dApps, understand smart contracts, and shape the digital future. <br />& as you
+										know
+										I am MERN Stack Developer. A MERN (MongoDB, Express, React, Node.js) stack
+										developer
+										is a skilled programmer who crafts robust, scalable, and dynamic web
+										applications,
+										leveraging the power of JavaScript and flexible database management.<br />
+										Demonstrated success in leading impactful projects and providing effective
+										mentorship.</p>
+									<ul class="about-info mt-4 px-md-0 px-2">
+										<li class="d-flex"><span>Profile:</span> <span>MERN Stack Developer</span>
+										</li>
+										<!-- <li class="d-flex"><span>Domain:</span> <span>Retail, Ecommerce, BFSI &amp; Digital
 											Marketing</span></li> -->
-									<li class="d-flex"><span>Education:</span> <span>Learning Bachelor of
-											Engineering</span></li>
-									<li class="d-flex"><span>Language:</span> <span>English, Urdu</span></li>
-									<li class="d-flex"><span>BI Tools:</span> <span>MS Word, MS Excel, Power
-											point</span></li>
-									<li class="d-flex"><span>Other Skills:</span> <span>Cloud, PySpark, Excel, Git,
-											Google Analytics &amp; SEO</span></li>
-									<li class="d-flex"><span>Interest:</span> <span>Traveling, Travel Photography,
-											OtoMobile, vehicles</span></li>
+										<li class="d-flex"><span>Education:</span> <span>Learning Bachelor of
+												Engineering</span></li>
+										<li class="d-flex"><span>Language:</span> <span>English, Urdu</span></li>
+										<li class="d-flex"><span>BI Tools:</span> <span>MS Word, MS Excel, Power
+												point</span></li>
+										<li class="d-flex"><span>Other Skills:</span> <span>Cloud, PySpark, Excel, Git,
+												Google Analytics &amp; SEO</span></li>
+										<li class="d-flex"><span>Interest:</span> <span>Traveling, Travel Photography,
+												OtoMobile, vehicles</span></li>
 
-								</ul>
+									</ul>
+								</div>
 							</div>
-						</div>
 
 
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-									<span class="number" data-number="20">0</span> <span>+</span>
-									<span>&nbsp; Projects completed</span>
-								</p>
-								<p><a target="_blank" href="https://www.linkedin.com/in/jawad-akhter-1814772a9/"
-										class="btn btn-primary py-3 px-3">LinkedIn</a></p>
+							<div class="counter-wrap ftco-animate d-flex mt-md-3">
+								<div class="text">
+									<p class="mb-4">
+										<span class="number" data-number="20">0</span> <span>+</span>
+										<span>&nbsp; Projects completed</span>
+									</p>
+									<p><a target="_blank" href="https://www.linkedin.com/in/jawad-akhter-1814772a9/"
+											class="btn btn-primary py-3 px-3">LinkedIn</a></p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
 
 
 
-	<section class="ftco-section ftco-no-pb" id="resume-section">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-md-10 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Resume</h1>
-					<h2 class="mb-4">Resume</h2>
-					<p>Seasoned MERN Stack Developer with 1+ years of experience driving business strategies.
-						immersive virtual spaces. Exciting journey ahead, learning to build dApps, understand smart
-						contracts, and embrace the future of the internet. Ready to shape tomorrow's digital landscape.
-					</p>
+		<section class="ftco-section ftco-no-pb" id="resume-section">
+			<div class="container">
+				<div class="row justify-content-center pb-5">
+					<div class="col-md-10 heading-section text-center ftco-animate">
+						<h1 class="big big-2">Resume</h1>
+						<h2 class="mb-4">Resume</h2>
+						<p>Seasoned MERN Stack Developer with 1+ years of experience driving business strategies.
+							immersive virtual spaces. Exciting journey ahead, learning to build dApps, understand smart
+							contracts, and embrace the future of the internet. Ready to shape tomorrow's digital
+							landscape.
+						</p>
+					</div>
 				</div>
-			</div>
 
-			<!-- <div class="row">
+				<!-- <div class="row">
 				<h1 class="big-4">Experience</h1>
 				<div class="underline"></div>
 			</div>
@@ -306,330 +314,339 @@
 				</div>
 			</div> -->
 
-			<!-- <br> -->
-			<!-- <br> -->
+				<!-- <br> -->
+				<!-- <br> -->
 
-			<div class="row">
-				<h1 class="big-4">Education</h1>
-				<div class="underline"></div>
-			</div>
-			<br>
+				<div class="row">
+					<h1 class="big-4">Education</h1>
+					<div class="underline"></div>
+				</div>
+				<br>
 
-			<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2020-2023</span>
-						<h2> Intermediate of Engineering</h2>
-						<span class="position">National collage of Engineering</span>
-						<p class="mt-4">Grade: First class distinction.</p>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="resume-wrap ftco-animate">
+							<span class="date">2020-2023</span>
+							<h2> Intermediate of Engineering</h2>
+							<span class="position">National collage of Engineering</span>
+							<p class="mt-4">Grade: First class distinction.</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2008-2020</span>
-						<h2>Higher Secondary School</h2>
-						<span class="position">Army Public School</span>
-						<p class="mt-4">Grade: First class distinction.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="row justify-content-center mt-5">
-				<div class="col-md-6 text-center ftco-animate">
-					<p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-
-	<section class="ftco-section" id="project-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-5">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Projects</h1>
-					<h2 class="mb-4">Projects</h2>
-					<p>Below are the sample MERN Stack projects on HTML, CSS, BootStrap, JavaScript.</p>
-				</div>
-			</div>
-			<div class="row d-flex">
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="https://developer-landing-paper.netlify.app/" class="block-20 zoom-effect"
-							style="background-image: url('images/proj_1.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-
-							<h3 class="heading"><a href="https://developer-landing-paper.netlify.app/">Developer Landing
-									Page using Custom CSS</a></h3>
-							<p>A MERN (MongoDB, Express, React, Node.js) stack developer is a skilled programmer who
-								crafts robust, scalable, and dynamic web applications, leveraging the power of
-								JavaScript.</p>
+					<div class="col-md-6">
+						<div class="resume-wrap ftco-animate">
+							<span class="date">2008-2020</span>
+							<h2>Higher Secondary School</h2>
+							<span class="position">Army Public School</span>
+							<p class="mt-4">Grade: First class distinction.</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="https://electronic-parts.netlify.app/" class="block-20 zoom-effect"
-							style="background-image: url('images/proj_4.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
 
-							<h3 class="heading"><a href="https://electronic-parts.netlify.app/">E-Commerce WEB using HTML, CSS for Beginners</a></h3>
-							<p>Performed exploratory data analysis on Eid sales data using Python to improve the
-								customer experience.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry">
-						<a href="https://zdar-foods.netlify.app/" class="block-20 zoom-effect"
-							style="background-image: url('images/proj_3.jpeg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-
-							<h3 class="heading"><a href="https://zdar-foods.netlify.app/">ZDAR-Foods</a></h3>
-							<p>Food is the flavor of life, nourishing our bodies and delighting our senses with its
-								incredible diversity and richness!.</p>
-						</div>
+				<div class="row justify-content-center mt-5">
+					<div class="col-md-6 text-center ftco-animate">
+						<p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
 					</div>
 				</div>
 			</div>
-			<br>
-			<!-- added justify-content-center to center align the last two projects -->
-			<div class="row d-flex justify-content-center">
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="https://premium-parts.netlify.app/"
-							class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpeg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
+		</section>
 
-							<h3 class="heading"><a
-									href="https://premium-parts.netlify.app/">Premium Parts</a></h3>
-							<p>Auto parts are essential components that make up a vehicle, ranging from engine and transmission components to body panels and accessories, enabling the safe and efficient operation of a car, truck, or motorcycle..</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="https://chay-shop.netlify.app/"
-							class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
 
-							<h3 class="heading"><a
-									href="https://chay-shop.netlify.app/">Coffee Shop</a></h3>
-							<p>Coffee is a rich and invigorating beverage that fuels the mind and body, with its bold flavors and aromas providing a daily boost of energy and delight for millions around the world.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row d-flex">
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="https://calculater-ultra.netlify.app/" class="block-20 zoom-effect"
-							style="background-image: url('images/proj_6.png');">
-						</a>
-						<div class="text mt-3 float-right d-block">
 
-							<h3 class="heading"><a href="https://calculater-ultra.netlify.app/">Calculater using Bootstrap & JavaScript</a></h3>
-							<p>A calculator is a handy tool that swiftly performs mathematical calculations, from simple arithmetic to complex equations, providing quick and accurate answers to aid in problem-solving and decision-making.</p>
-						</div>
+		<section class="ftco-section" id="project-section">
+			<div class="container">
+				<div class="row justify-content-center mb-5 pb-5">
+					<div class="col-md-7 heading-section text-center ftco-animate">
+						<h1 class="big big-2">Projects</h1>
+						<h2 class="mb-4">Projects</h2>
+						<p>Below are the sample MERN Stack projects on HTML, CSS, BootStrap, JavaScript.</p>
 					</div>
 				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="https://lambent-stroopwafel-b3acd6.netlify.app/" class="block-20 zoom-effect"
-							style="background-image: url('images/proj_7.png');">
-						</a>
-						<div class="text mt-3 float-right d-block">
+				<div class="row d-flex">
+					<div class="col-md-4 d-flex ftco-animate">
+						<div class="blog-entry justify-content-end">
+							<a href="https://developer-landing-paper.netlify.app/" class="block-20 zoom-effect"
+								style="background-image: url('images/proj_1.jpg');">
+							</a>
+							<div class="text mt-3 float-right d-block">
 
-							<h3 class="heading"><a href="https://lambent-stroopwafel-b3acd6.netlify.app/"> Netflix </a></h3>
-							<p>Netflix is a popular streaming service that offers a vast library of movies, TV shows, and original content, entertaining and inspiring millions of subscribers worldwide with its endless options and personalized recommendations.</p>
+								<h3 class="heading"><a href="https://developer-landing-paper.netlify.app/">Developer
+										Landing
+										Page using Custom CSS</a></h3>
+								<p>A MERN (MongoDB, Express, React, Node.js) stack developer is a skilled programmer who
+									crafts robust, scalable, and dynamic web applications, leveraging the power of
+									JavaScript.</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry">
-						<a href="https://parallex-app.netlify.app/"
-							class="block-20 zoom-effect" style="background-image: url('images/proj_8.webp');">
-						</a>
-						<div class="text mt-3 float-right d-block">
+					<div class="col-md-4 d-flex ftco-animate">
+						<div class="blog-entry justify-content-end">
+							<a href="https://electronic-parts.netlify.app/" class="block-20 zoom-effect"
+								style="background-image: url('images/proj_4.jpg');">
+							</a>
+							<div class="text mt-3 float-right d-block">
 
-							<h3 class="heading"><a
-									href="https://parallex-app.netlify.app/">Parallex Website</a></h3>
-							<p>A parallax website is a visually stunning online platform that uses scrolling and layered design elements to create a dynamic, immersive, and interactive user experience, engaging visitors with its striking animations and depth effects.</p>
+								<h3 class="heading"><a href="https://electronic-parts.netlify.app/">E-Commerce WEB using
+										HTML, CSS for Beginners</a></h3>
+								<p>Performed exploratory data analysis on Eid sales data using Python to improve the
+									customer experience.</p>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+					<div class="col-md-4 d-flex ftco-animate">
+						<div class="blog-entry">
+							<a href="https://zdar-foods.netlify.app/" class="block-20 zoom-effect"
+								style="background-image: url('images/proj_3.jpeg');">
+							</a>
+							<div class="text mt-3 float-right d-block">
 
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-		<div class="container">
-			<div class="row d-md-flex align-items-center">
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18">
-						<div class="text">
-							<strong class="number" data-number="15">0</strong>
-							<span>Achievements</span>
+								<h3 class="heading"><a href="https://zdar-foods.netlify.app/">ZDAR-Foods</a></h3>
+								<p>Food is the flavor of life, nourishing our bodies and delighting our senses with its
+									incredible diversity and richness!.</p>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18">
-						<div class="text">
-							<strong class="number" data-number="20">0</strong>
-							<span>Projects</span>
+				<br>
+				<!-- added justify-content-center to center align the last two projects -->
+				<div class="row d-flex justify-content-center">
+					<div class="col-md-4 d-flex ftco-animate">
+						<div class="blog-entry justify-content-end">
+							<a href="https://premium-parts.netlify.app/" class="block-20 zoom-effect"
+								style="background-image: url('images/proj_2.jpeg');">
+							</a>
+							<div class="text mt-3 float-right d-block">
+
+								<h3 class="heading"><a href="https://premium-parts.netlify.app/">Premium Parts</a></h3>
+								<p>Auto parts are essential components that make up a vehicle, ranging from engine and
+									transmission components to body panels and accessories, enabling the safe and
+									efficient operation of a car, truck, or motorcycle..</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 d-flex ftco-animate">
+						<div class="blog-entry justify-content-end">
+							<a href="https://chay-shop.netlify.app/" class="block-20 zoom-effect"
+								style="background-image: url('images/proj_5.jpg');">
+							</a>
+							<div class="text mt-3 float-right d-block">
+
+								<h3 class="heading"><a href="https://chay-shop.netlify.app/">Coffee Shop</a></h3>
+								<p>Coffee is a rich and invigorating beverage that fuels the mind and body, with its
+									bold flavors and aromas providing a daily boost of energy and delight for millions
+									around the world.</p>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18">
-						<div class="text">
-							<strong class="number" data-number="800">0</strong>
-							<span>Mentored Students</span>
+				<div class="row d-flex">
+					<div class="col-md-4 d-flex ftco-animate">
+						<div class="blog-entry justify-content-end">
+							<a href="https://calculater-ultra.netlify.app/" class="block-20 zoom-effect"
+								style="background-image: url('images/proj_6.png');">
+							</a>
+							<div class="text mt-3 float-right d-block">
+
+								<h3 class="heading"><a href="https://calculater-ultra.netlify.app/">Calculater using
+										Bootstrap & JavaScript</a></h3>
+								<p>A calculator is a handy tool that swiftly performs mathematical calculations, from
+									simple arithmetic to complex equations, providing quick and accurate answers to aid
+									in problem-solving and decision-making.</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18">
-						<div class="text">
-							<strong class="number" data-number="300">0</strong>
-							<span>Cups of coffee</span>
+					<div class="col-md-4 d-flex ftco-animate">
+						<div class="blog-entry justify-content-end">
+							<a href="https://dazzling-dusk-a72107.netlify.app/" class="block-20 zoom-effect"
+								style="background-image: url('images/proj_7.png');">
+							</a>
+							<div class="text mt-3 float-right d-block">
+
+								<h3 class="heading"><a href="https://dazzling-dusk-a72107.netlify.app/"> Netflix
+									</a></h3>
+								<p>Netflix is a popular streaming service that offers a vast library of movies, TV
+									shows, and original content, entertaining and inspiring millions of subscribers
+									worldwide with its endless options and personalized recommendations.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 d-flex ftco-animate">
+						<div class="blog-entry">
+							<a href="https://parallex-app.netlify.app/" class="block-20 zoom-effect"
+								style="background-image: url('images/proj_8.webp');">
+							</a>
+							<div class="text mt-3 float-right d-block">
+
+								<h3 class="heading"><a href="https://parallex-app.netlify.app/">Parallex Website</a>
+								</h3>
+								<p>A parallax website is a visually stunning online platform that uses scrolling and
+									layered design elements to create a dynamic, immersive, and interactive user
+									experience, engaging visitors with its striking animations and depth effects.</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-			<!-- <div class="container"> -->
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>More projects on<span> Github </span> </h2>
-					<div class="heading">
-						<h4> I love to solve business problems &amp; uncover hidden data stories </h4>
+		<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+			<div class="container">
+				<div class="row d-md-flex align-items-center">
+					<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+						<div class="block-18">
+							<div class="text">
+								<strong class="number" data-number="15">0</strong>
+								<span>Achievements</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+						<div class="block-18">
+							<div class="text">
+								<strong class="number" data-number="20">0</strong>
+								<span>Projects</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+						<div class="block-18">
+							<div class="text">
+								<strong class="number" data-number="800">0</strong>
+								<span>Mentored Students</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+						<div class="block-18">
+							<div class="text">
+								<strong class="number" data-number="300">0</strong>
+								<span>Cups of coffee</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
+				<!-- <div class="container"> -->
+				<div class="row justify-content-center">
+					<div class="col-md-7 ftco-animate text-center">
+						<h2>More projects on<span> Github </span> </h2>
+						<div class="heading">
+							<h4> I love to solve business problems &amp; uncover hidden data stories </h4>
+							<br>
+							<p><a href="https://github.com/akhterjawad" class="btn btn-primary py-3 px-5">GitHub</a></p>
+						</div>
+					</div>
+				</div>
+				<!-- </div> -->
+			</div>
+		</section>
+
+
+
+		<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+			<div class="container">
+				<div class="row justify-content-center mb-5 pb-3">
+					<div class="col-md-7 heading-section text-center ftco-animate">
+						<h1 class="big big-2">Contact</h1>
+						<h2 class="mb-4">Contact Me</h2>
+						<p>Below are the details to reach out to me!</p>
+					</div>
+				</div>
+
+				<div class="row d-flex contact-info mb-5">
+					<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+						<div class="align-self-stretch box p-4 text-center">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="icon-map-signs"></span>
+							</div>
+							<h3 class="mb-4">Address</h3>
+							<p>Sindh, Pakistan</p>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+						<div class="align-self-stretch box p-4 text-center">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="icon-phone2"></span>
+							</div>
+							<h3 class="mb-4">Contact Number</h3>
+							<p><a href="tel://+92 3141067212">+92 3141067212</a></p>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+						<div class="align-self-stretch box p-4 text-center">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="icon-paper-plane"></span>
+							</div>
+							<h3 class="mb-4">Email Address</h3>
+							<p><a href="https://mail.google.com/mail/u/0/#inbox">akhterjawad566@gmail.com</a></p>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+						<div class="align-self-stretch box p-4 text-center">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="icon-globe"></span>
+							</div>
+							<h3 class="mb-4">Download Resume</h3>
+							<p><a href="#">resumelink</a></p>
+						</div>
+					</div>
+
+					<div class="container">
 						<br>
-						<p><a href="https://github.com/akhterjawad" class="btn btn-primary py-3 px-5">GitHub</a></p>
+						<br>
+						<div class="row justify-content-center">
+							<div class="col-md-7 ftco-animate text-center">
+								<h2>Have a<span> Question? </span> <a href="#" class="btn btn-primary py-3 px-5">Click
+										Here</a> </h2>
+							</div>
+						</div>
+						<br>
+						<ul
+							class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+							<li class="ftco-animate normal-txt">Find me on </li>
+							<li class="ftco-animate"><a href="#"><span class="icon-youtube"></span></a></li>
+							<li class="ftco-animate"><a href="#"><span class="icon-linkedin"></span></a></li>
+							<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+							<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+							<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+						</ul>
+						<br>
+					</div>
+				</div>
+		</section>
+
+
+
+
+		<footer class="ftco-footer ftco-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+
+						<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;
+							<script>document.write(new Date().getFullYear());</script> All rights reserved | This
+							template
+							is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a
+								href="https://colorlib.com" target="_blank">Colorlib</a>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</p>
 					</div>
 				</div>
 			</div>
-			<!-- </div> -->
-		</div>
-	</section>
+		</footer>
 
 
+		<!-- loader -->
+		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+				<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+				<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+					stroke="#F96D00" />
+			</svg></div>
 
-	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Contact</h1>
-					<h2 class="mb-4">Contact Me</h2>
-					<p>Below are the details to reach out to me!</p>
-				</div>
-			</div>
-
-			<div class="row d-flex contact-info mb-5">
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-map-signs"></span>
-						</div>
-						<h3 class="mb-4">Address</h3>
-						<p>Sindh, Pakistan</p>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-phone2"></span>
-						</div>
-						<h3 class="mb-4">Contact Number</h3>
-						<p><a href="tel://+92 3141067212">+92 3141067212</a></p>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-paper-plane"></span>
-						</div>
-						<h3 class="mb-4">Email Address</h3>
-						<p><a href="https://mail.google.com/mail/u/0/#inbox">akhterjawad566@gmail.com</a></p>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-globe"></span>
-						</div>
-						<h3 class="mb-4">Download Resume</h3>
-						<p><a href="#">resumelink</a></p>
-					</div>
-				</div>
-
-				<div class="container">
-					<br>
-					<br>
-					<div class="row justify-content-center">
-						<div class="col-md-7 ftco-animate text-center">
-							<h2>Have a<span> Question? </span> <a href="#"
-									class="btn btn-primary py-3 px-5">Click Here</a> </h2>
-						</div>
-					</div>
-					<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-						<li class="ftco-animate normal-txt">Find me on </li>
-						<li class="ftco-animate"><a href="#"><span
-									class="icon-youtube"></span></a></li>
-						<li class="ftco-animate"><a href="#"><span
-									class="icon-linkedin"></span></a></li>
-						<li class="ftco-animate"><a href="#"><span
-									class="icon-twitter"></span></a></li>
-						<li class="ftco-animate"><a href="#"><span
-									class="icon-facebook"></span></a></li>
-						<li class="ftco-animate"><a href="#"><span
-									class="icon-instagram"></span></a></li>
-					</ul>
-					<br>
-				</div>
-			</div>
-	</section>
-
-
-
-
-	<footer class="ftco-footer ftco-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center">
-
-					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;
-						<script>document.write(new Date().getFullYear());</script> All rights reserved | This template
-						is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a
-							href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-
-	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" />
-		</svg></div>
-
-
+	
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery-migrate-3.0.1.min.js"></script>
 	<script src="js/popper.min.js"></script>

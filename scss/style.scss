@@ -28,7 +28,7 @@ $secondary: #a0f669;
 }
 
 html {
-	// overflow-x: hidden;
+	overflow-x: hidden !important;
 }
 body {
 	font-family: $font-primary;
@@ -38,7 +38,7 @@ body {
 	font-weight: 400;
 	color: lighten($black,60%);
 	&.menu-show {
-		overflow: hidden;
+		overflow: hidden !important;
 		position: fixed;
 		height: 100%;
 		width: 100%;
